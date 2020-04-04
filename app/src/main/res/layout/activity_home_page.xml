@@ -6,13 +6,17 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".HomePage">
+    
+<include
+    layout="@layout/toolbar_main"
+    android:id="@+id/my_toolbar"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="@string/welcome"
-        android:textSize="18dp"/>
+        android:textSize="18sp"/>
 
     <ListView
         android:layout_width="match_parent"

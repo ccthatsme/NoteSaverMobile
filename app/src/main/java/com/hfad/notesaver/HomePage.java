@@ -1,6 +1,7 @@
 package com.hfad.notesaver;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,7 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class HomePage extends Activity {
+public class HomePage extends AppCompatActivity {
 
     private ListView list;
     private String[] taskItems;
@@ -19,6 +20,9 @@ public class HomePage extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+        Toolbar toolbar = findViewById(R.id.my_toolbar);
+        setSupportActionBar(toolbar);
+
         taskItems = getResources().getStringArray(R.array.options);
         list = (ListView) findViewById(R.id.startingtask);
         ArrayAdapter<String> itemAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, taskItems );

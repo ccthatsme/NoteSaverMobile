@@ -9,9 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ViewAllNotes"></activity>
+        <activity android:name=".ViewAllNotes"
+            android:label="@string/view_title"
+            android:parentActivityName=".HomePage"></activity>
         <activity android:name=".AddNote"
-            android:label="Add a Note"/>
+            android:label="@string/add_title"
+            android:parentActivityName=".HomePage"/>
         <activity android:name=".MainActivity" />
         <activity android:name=".HomePage">
             <intent-filter>

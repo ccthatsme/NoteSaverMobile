@@ -4,6 +4,10 @@
     <string name="hint_textbox">Type your note here!</string>
     <string name="button_name">Click to Save</string>
     <string name="welcome">Welcome Please make a selection!</string>
+
+    <string name="add_title">Add a Note</string>
+    <string name ="view_title">View All Notes</string>
+
     <string-array name="options">
         <item>Add Note</item>
         <item>View All Notes</item>

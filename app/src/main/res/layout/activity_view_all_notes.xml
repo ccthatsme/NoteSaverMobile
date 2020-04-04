@@ -6,4 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".ViewAllNotes">
 
+    <include
+        layout="@layout/toolbar_main"
+        android:id="@+id/my_toolbar"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
