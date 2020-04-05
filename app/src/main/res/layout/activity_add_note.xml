@@ -5,29 +5,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".AddNote"
+    android:showDividers="beginning">
 
     <include
         layout="@layout/toolbar_main"
         android:id="@+id/my_toolbar"/>
-
-    <EditText
-        android:id="@+id/subject"
+    
+    <ImageButton
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/calendar_icon"
+        android:src="@drawable/baseline_calendar_today_black_18dp"
+        android:layout_gravity="left"
+        />
+
+
+
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/hint"
         android:layout_weight="1"
-        android:inputType="date"
         android:imeOptions="actionNext"
         />
 
+
+
     <EditText
         android:id="@+id/note_box"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/hint_textbox"
-        android:layout_weight="3"
-        android:imeOptions="actionNext"/>
+        android:layout_weight="7"
+        android:imeOptions="actionNext"
+        />
+
+
 
     <Button
         android:id="@+id/save"
