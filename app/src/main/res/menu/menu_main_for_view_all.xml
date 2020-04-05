@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/create_note_action"
+        android:title="@string/add_title"
+        android:icon="@drawable/baseline_note_add_black_18dp"
+        android:orderInCategory="1"
+        app:showAsAction="ifRoom"/>
+
+
+
+</menu>

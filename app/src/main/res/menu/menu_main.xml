@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <item
+        android:id="@+id/view_note_action"
+        android:title="@string/view_title"
+        android:icon="@drawable/baseline_view_list_black_18dp"
+        android:orderInCategory="2"
+        app:showAsAction="ifRoom"/>
+
+</menu>

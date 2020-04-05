@@ -8,6 +8,7 @@
     <string name="add_title">Add a Note</string>
     <string name ="view_title">View All Notes</string>
 
+
     <string-array name="options">
         <item>Add Note</item>
         <item>View All Notes</item>
