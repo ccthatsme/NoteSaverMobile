@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/hint_textbox"
         android:layout_weight="7"
-        android:imeOptions="actionNext"
+        android:imeOptions="actionDone"
         />
 
 
@@ -50,7 +50,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/button_name"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:onClick="onClickAdd"/>
 
 
 

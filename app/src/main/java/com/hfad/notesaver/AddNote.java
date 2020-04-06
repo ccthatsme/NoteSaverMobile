@@ -22,6 +22,7 @@ import java.util.Calendar;
 
 public class AddNote extends AppCompatActivity implements View.OnClickListener {
 
+
     private ImageButton imageButton;
     private TextView textDate;
 
@@ -88,4 +89,21 @@ public class AddNote extends AppCompatActivity implements View.OnClickListener {
         }
 
     }
+
+    public void onClickAdd(View view){
+        View viewNoteDetails = findViewById(R.id.note_box);
+        EditText noteDetails = findViewById(R.id.note_box);
+        String noteText = noteDetails.getText().toString();
+
+        View viewDate = findViewById(R.id.date);
+        TextView dateDetails = findViewById(R.id.date);
+        String dateText = dateDetails.getText().toString();
+
+        Note note = new Note(dateText, noteText);
+
+        Intent intent = new Intent(this, ViewAllNotes.class);
+        intent.putExtra("note_parcel", note);
+        startActivity(intent);
+    }
+
 }

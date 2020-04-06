@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class ViewAllNotes extends AppCompatActivity {
 
@@ -19,6 +20,17 @@ public class ViewAllNotes extends AppCompatActivity {
         setSupportActionBar(toolbar);
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
+
+    //wont start from the home screen i think because its not passing in a parcel
+        Note note = getIntent().getParcelableExtra("note_parcel");
+
+        TextView tv = findViewById(R.id.note_view);
+
+        if (note.toString() != null) {
+            tv.setText(note.toString());
+        }
+
+
     }
 
     @Override
