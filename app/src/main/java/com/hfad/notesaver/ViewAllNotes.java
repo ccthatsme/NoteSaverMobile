@@ -6,11 +6,14 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
 public class ViewAllNotes extends AppCompatActivity {
+
+    private  TextView tv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,16 +24,20 @@ public class ViewAllNotes extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
 
-    //wont start from the home screen i think because its not passing in a parcel
-        Note note = getIntent().getParcelableExtra("note_parcel");
+        if (getIntent().getParcelableExtra("note_parcel") != null) {
 
-        TextView tv = findViewById(R.id.note_view);
+            Intent intent = getIntent();
+            Note note = intent.getParcelableExtra("note_parcel");
 
-        if (note.toString() != null) {
-            tv.setText(note.toString());
+
+
+
+
+            String noteDetail = note.getNote();
+             tv = findViewById(R.id.note_view);
+                tv.setText(noteDetail);
         }
-
-
+    //wont start from the home screen i think because its not passing in a parcel
     }
 
     @Override

@@ -3,6 +3,7 @@ package com.hfad.notesaver;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
 public class Note implements Parcelable {

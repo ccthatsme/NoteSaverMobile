@@ -18,6 +18,7 @@ import android.widget.TextView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.app.ActionBar;
 
+import java.io.Serializable;
 import java.util.Calendar;
 
 public class AddNote extends AppCompatActivity implements View.OnClickListener {
