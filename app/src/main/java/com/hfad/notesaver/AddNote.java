@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -19,13 +20,16 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.appcompat.app.ActionBar;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class AddNote extends AppCompatActivity implements View.OnClickListener {
 
-
+    private ArrayList<Note> list = new ArrayList<Note>();
     private ImageButton imageButton;
     private TextView textDate;
+    private TextView viewNote;
+    private Button button;
 
     private int year;
     private int month;
@@ -45,8 +49,12 @@ public class AddNote extends AppCompatActivity implements View.OnClickListener {
 
         imageButton = findViewById(R.id.calendar_icon);
         textDate = findViewById(R.id.date);
+        button = findViewById(R.id.save);
+        viewNote = findViewById(R.id.view);
 
         imageButton.setOnClickListener(this);
+        button.setOnClickListener(this);
+
     }
 
     @Override
@@ -89,22 +97,48 @@ public class AddNote extends AppCompatActivity implements View.OnClickListener {
             datePickerDialog.show();
         }
 
-    }
+        if (v == button) {
+            View viewNoteDetails = findViewById(R.id.note_box);
+            EditText noteDetails = findViewById(R.id.note_box);
+            String noteText = noteDetails.getText().toString();
 
-    public void onClickAdd(View view){
-        View viewNoteDetails = findViewById(R.id.note_box);
-        EditText noteDetails = findViewById(R.id.note_box);
-        String noteText = noteDetails.getText().toString();
+            View viewDate = findViewById(R.id.date);
+            TextView dateDetails = findViewById(R.id.date);
+            String dateText = dateDetails.getText().toString();
 
-        View viewDate = findViewById(R.id.date);
-        TextView dateDetails = findViewById(R.id.date);
-        String dateText = dateDetails.getText().toString();
+            Note note = new Note(dateText, noteText);
+           // viewNote.setText(note.toString());
 
-        Note note = new Note(dateText, noteText);
+            Intent intent = new Intent(this, ViewAllNotes.class);
+            intent.putExtra("note_parcel", note.toString());
 
-        Intent intent = new Intent(this, ViewAllNotes.class);
-        intent.putExtra("note_parcel", note);
         startActivity(intent);
+        }
+
     }
+
+//    public void onClickAdd(View view){
+//        TextView tv = view.findViewById(R.id.view);
+//        View viewNoteDetails = findViewById(R.id.note_box);
+//        EditText noteDetails = findViewById(R.id.note_box);
+//        String noteText = noteDetails.getText().toString();
+//
+//        View viewDate = findViewById(R.id.date);
+//        TextView dateDetails = findViewById(R.id.date);
+//        String dateText = dateDetails.getText().toString();
+//
+//        Note note = new Note(dateText, noteText);
+
+    //    tv.setText(note.toString());
+//
+//        list.add(note);
+//        String noteDetail = list.toString();
+//
+//
+//        Intent intent = new Intent(this, ViewAllNotes.class);
+//        intent.putExtra("note_parcel", "test");
+//
+//        startActivity(intent);
+    //}
 
 }

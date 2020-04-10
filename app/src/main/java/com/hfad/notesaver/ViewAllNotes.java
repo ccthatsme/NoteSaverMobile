@@ -24,19 +24,27 @@ public class ViewAllNotes extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
         ab.setDisplayHomeAsUpEnabled(true);
 
-        if (getIntent().getParcelableExtra("note_parcel") != null) {
-
+        if(getIntent().getExtras() != null){
             Intent intent = getIntent();
-            Note note = intent.getParcelableExtra("note_parcel");
+            String detailNote = intent.getExtras().getString("note_parcel");
 
-
-
-
-
-            String noteDetail = note.getNote();
-             tv = findViewById(R.id.note_view);
-                tv.setText(noteDetail);
+            tv = findViewById(R.id.note_view);
+            tv.setText(detailNote);
         }
+
+//        if (getIntent().getParcelableExtra("note_parcel") != null) {
+//
+//            Intent intent = getIntent();
+//            Note note = intent.getParcelableExtra("note_parcel");
+//
+//
+//
+//
+//
+//            String noteDetail = note.getNote();
+//             tv = findViewById(R.id.note_view);
+//                tv.setText(noteDetail);
+//        }
     //wont start from the home screen i think because its not passing in a parcel
     }
 

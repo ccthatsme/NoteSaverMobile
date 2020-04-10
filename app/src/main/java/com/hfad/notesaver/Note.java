@@ -4,6 +4,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Note implements Parcelable {
@@ -11,6 +12,7 @@ public class Note implements Parcelable {
     private String date;
     private String note;
 
+    public static final ArrayList<Note> noteList = new ArrayList<>();
 
     public Note() {
     }
