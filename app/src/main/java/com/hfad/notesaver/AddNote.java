@@ -10,10 +10,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.widget.Toolbar;
@@ -30,6 +32,7 @@ public class AddNote extends AppCompatActivity implements View.OnClickListener {
     private TextView textDate;
     private TextView viewNote;
     private Button button;
+    private ListView lv;
 
     private int year;
     private int month;
@@ -54,6 +57,17 @@ public class AddNote extends AppCompatActivity implements View.OnClickListener {
 
         imageButton.setOnClickListener(this);
         button.setOnClickListener(this);
+
+        if (getIntent().getSerializableExtra("list") != null) {
+
+            Intent intent = getIntent();
+            list = (ArrayList<Note>) intent.getSerializableExtra("list");
+            lv = findViewById(R.id.list_view);
+
+
+
+        }
+
 
     }
 
@@ -108,9 +122,10 @@ public class AddNote extends AppCompatActivity implements View.OnClickListener {
 
             Note note = new Note(dateText, noteText);
            // viewNote.setText(note.toString());
+            list.add(note);
 
             Intent intent = new Intent(this, ViewAllNotes.class);
-            intent.putExtra("note_parcel", note.toString());
+            intent.putExtra("note_parcel", list);
 
         startActivity(intent);
         }

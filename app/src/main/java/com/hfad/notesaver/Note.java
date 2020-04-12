@@ -59,10 +59,12 @@ public class Note implements Parcelable {
 
     @Override
     public String toString() {
-        return "Note{" +
-                "date='" + date + '\'' +
-                ", note='" + note + '\'' +
-                '}';
+//        return "Note{" +
+//                "date='" + date + '\'' +
+//                ", note='" + note + '\'' +
+//                '}';
+        return "Note:" + "\n" + date + "\n" + note;
+
     }
 
     @Override
